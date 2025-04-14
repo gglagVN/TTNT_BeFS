@@ -389,6 +389,16 @@ PROVINCES = {
     'representative_number': 33,  
     'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh']
 },
+    'hoangsa': {
+    'name': 'Hoàng Sa',
+    'representative_number': 64,
+    'neighbors': []
+    },
+    'truongsa': {
+        'name': 'Trường Sa',
+        'representative_number': 65,
+        'neighbors': []
+    },
 
 }
 
