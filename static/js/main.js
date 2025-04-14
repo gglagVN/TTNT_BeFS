@@ -28,10 +28,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Điền dữ liệu vào các dropdown
     function populateSelects(provinces) {
-        const sortedProvinces = Object.entries(provinces)
-            .sort((a, b) => a[1].name.localeCompare(b[1].name));
-
-        sortedProvinces.forEach(([id, data], index) => {
+        const entries = Object.entries(provinces);
+    
+        const mainProvinces = [];
+        const extraProvinces = [];
+    
+        entries.forEach(([id, data]) => {
+            // Giả sử các tỉnh phụ có id đặc biệt
+            if (["hoangsa", "truongsa"].includes(id.toLowerCase())) {
+                extraProvinces.push([id, data]);
+            } else {
+                mainProvinces.push([id, data]);
+            }
+        });
+    
+        // Sort riêng từng nhóm theo tên
+        mainProvinces.sort((a, b) => a[1].name.localeCompare(b[1].name));
+        extraProvinces.sort((a, b) => a[1].name.localeCompare(b[1].name));
+    
+        // Gộp lại: chính trước, phụ sau
+        const finalList = [...mainProvinces, ...extraProvinces];
+    
+        finalList.forEach(([id, data], index) => {
             const option = new Option(`${index + 1}. ${data.name}`, id);
             startSelect.add(option.cloneNode(true));
             endSelect.add(option);
@@ -121,16 +139,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Xử lý nút đặt lại
     document.getElementById('resetBtn').addEventListener('click', function() {
+        // Reset các dropdown
         startSelect.value = '';
         endSelect.value = '';
-        document.getElementById('result').innerHTML = '';
+        
+        // Xóa kết quả
+        clearResults();
+        
+        // Xóa đường đi trên bản đồ
         const svgDoc = svgObject.contentDocument;
-        svgDoc.querySelectorAll('.province').forEach(province => {
-            province.classList.remove('selected', 'path');
-        });
+        if (svgDoc) {
+            // Xóa tất cả các class được thêm vào các tỉnh
+            svgDoc.querySelectorAll('.province').forEach(province => {
+                province.classList.remove('selected', 'path');
+            });
+        }
+        
+        // Clear any existing error messages
+        const alerts = document.querySelectorAll('.alert');
+        alerts.forEach(alert => alert.remove());
     });
+    function clearResults() {
+        const resultDiv = document.getElementById('result');
+        if(resultDiv) {
+            // Xóa toàn bộ nội dung trong div result
+            resultDiv.innerHTML = '';
+            
+            // Tạo lại cấu trúc div rỗng để sẵn sàng cho kết quả mới
+            resultDiv.innerHTML = `
+                <div id="path-display"></div>
+                <div id="distance-display" class="mt-2"></div>
+                <div id="representative-numbers" class="mt-2"></div>
+            `;
+        }
+    }
 
     // Xử lý thay đổi dropdown
     startSelect.addEventListener('change', updateMapSelection);
     endSelect.addEventListener('change', updateMapSelection);
 });
+function updateMapSelection() {
+    const svgDoc = svgObject.contentDocument;
+    if (!svgDoc) return;
+
+    // Xóa tất cả các lớp selected và path
+    clearSelections(svgDoc);
+
+    // Thêm lớp selected cho các tỉnh được chọn
+    if (startSelect.value) {
+        const startProvince = svgDoc.getElementById(startSelect.value);
+        if (startProvince) startProvince.classList.add('selected');
+    }
+    
+    if (endSelect.value) {
+        const endProvince = svgDoc.getElementById(endSelect.value);
+        if (endProvince) endProvince.classList.add('selected');
+    }
+}
+
+function clearSelections(svgDoc) {
+    const provinces = svgDoc.querySelectorAll('.province');
+    provinces.forEach(province => {
+        province.classList.remove('selected', 'path');
+    });
+};
