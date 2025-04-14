@@ -1,10 +1,78 @@
 from flask import Flask, render_template, jsonify, send_from_directory
 from collections import deque
 import os
+from queue import PriorityQueue
+import math
 
 app = Flask(__name__)
 
 # Dữ liệu kề của các tỉnh Việt Nam
+COORDINATES = {
+    'hanoi': {'lat': 21.0285, 'lng': 105.8542},
+    'hungyen': {'lat': 20.6464, 'lng': 106.0511},
+    'bacninh': {'lat': 21.1214, 'lng': 106.1104},
+    'hoabinh': {'lat': 20.8135, 'lng': 105.3380},
+    'vinhphuc': {'lat': 21.3609, 'lng': 105.5474},
+    'haiduong': {'lat': 20.9373, 'lng': 106.3347},
+    'haiphong': {'lat': 20.8449, 'lng': 106.6881},
+    'quangninh': {'lat': 21.0068, 'lng': 107.2925},
+    'bacgiang': {'lat': 21.2717, 'lng': 106.1947},
+    'langson': {'lat': 21.8530, 'lng': 106.7610},
+    'thainguyen': {'lat': 21.5941, 'lng': 105.8437},
+    'backan': {'lat': 22.1477, 'lng': 105.8349},
+    'caobang': {'lat': 22.6666, 'lng': 106.2500},
+    'tuyenquang': {'lat': 21.7767, 'lng': 105.2280},
+    'hagiang': {'lat': 22.8333, 'lng': 104.9833},
+    'yenbai': {'lat': 21.7167, 'lng': 104.9000},
+    'phutho': {'lat': 21.3200, 'lng': 105.4000},
+    'laichau': {'lat': 22.3964, 'lng': 103.4581},
+    'dienbien': {'lat': 21.3833, 'lng': 103.0167},
+    'sonla': {'lat': 21.3256, 'lng': 103.9191},
+    'thaibinh': {'lat': 20.4500, 'lng': 106.3333},
+    'namdinh': {'lat': 20.4333, 'lng': 106.1667},
+    'ninhbinh': {'lat': 20.2537, 'lng': 105.9754},
+    'thanhhoa': {'lat': 19.8066, 'lng': 105.7667},
+    'nghean': {'lat': 19.2342, 'lng': 104.9200},
+    'hatinh': {'lat': 18.3333, 'lng': 105.9000},
+    'quangbinh': {'lat': 17.4667, 'lng': 106.6000},
+    'quangtri': {'lat': 16.7500, 'lng': 107.0000},
+    'thuathienhue': {'lat': 16.4633, 'lng': 107.5958},
+    'danang': {'lat': 16.0544, 'lng': 108.2022},
+    'quangnam': {'lat': 15.5793, 'lng': 108.4089},
+    'quangngai': {'lat': 15.1213, 'lng': 108.7921},
+    'kontum': {'lat': 14.3544, 'lng': 108.0180},
+    'binhdinh': {'lat': 14.1667, 'lng': 108.9000},
+    'gialai': {'lat': 13.9833, 'lng': 108.0000},
+    'phuyen': {'lat': 13.1667, 'lng': 109.1667},
+    'daklak': {'lat': 12.6667, 'lng': 108.0500},
+    'khanhhoa': {'lat': 12.2500, 'lng': 109.0000},
+    'daknong': {'lat': 12.0045, 'lng': 107.6867},
+    'lamdong': {'lat': 11.9465, 'lng': 108.4419},
+    'ninhthuan': {'lat': 11.7500, 'lng': 108.8333},
+    'binhthuan': {'lat': 10.9333, 'lng': 108.1000},
+    'binhphuoc': {'lat': 11.7500, 'lng': 106.9167},
+    'tayninh': {'lat': 11.3000, 'lng': 106.1000},
+    'binhduong': {'lat': 11.1667, 'lng': 106.6667},
+    'dongnai': {'lat': 11.1068, 'lng': 107.1678},
+    'tphochiminh': {'lat': 10.8231, 'lng': 106.6297},
+    'bariavungtau': {'lat': 10.3494, 'lng': 107.0842},
+    'longan': {'lat': 10.5417, 'lng': 106.4083},
+    'tiengiang': {'lat': 10.3600, 'lng': 106.3600},
+    'bentre': {'lat': 10.2417, 'lng': 106.3750},
+    'travinh': {'lat': 9.9347, 'lng': 106.3453},
+    'vinhlong': {'lat': 10.2537, 'lng': 105.9754},
+    'dongthap': {'lat': 10.6667, 'lng': 105.6833},
+    'angiang': {'lat': 10.3861, 'lng': 105.4267},
+    'kiengiang': {'lat': 10.0167, 'lng': 105.0833},
+    'cantho': {'lat': 10.0333, 'lng': 105.7833},
+    'haugiang': {'lat': 9.7875, 'lng': 105.4678},
+    'soctrang': {'lat': 9.6033, 'lng': 105.9800},
+    'baclieu': {'lat': 9.2942, 'lng': 105.7244},
+    'camau': {'lat': 9.1769, 'lng': 105.1500},
+    'laocai': {'lat': 22.4837, 'lng': 103.9750},
+    'hanam': {'lat': 20.5417, 'lng': 105.9225}
+}
+
 PROVINCES = {
     'hanoi': {
         'name': 'Hà Nội',
@@ -324,6 +392,25 @@ PROVINCES = {
 
 }
 
+def calculate_distance(coord1, coord2):
+    """Tính khoảng cách giữa hai điểm dựa trên tọa độ địa lý"""
+    lat1, lng1 = math.radians(coord1['lat']), math.radians(coord1['lng'])
+    lat2, lng2 = math.radians(coord2['lat']), math.radians(coord2['lng'])
+    
+    # Công thức Haversine để tính khoảng cách
+    dlat = lat2 - lat1
+    dlng = lng2 - lng1
+    a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlng/2)**2
+    c = 2 * math.asin(math.sqrt(a))
+    r = 6371 # Bán kính trái đất (km)
+    return c * r
+
+def heuristic(current, goal):
+    """Hàm heuristic: ước tính khoảng cách từ điểm hiện tại đến đích"""
+    if current not in COORDINATES or goal not in COORDINATES:
+        return 0
+    return calculate_distance(COORDINATES[current], COORDINATES[goal])
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -339,27 +426,38 @@ def get_provinces():
 
 @app.route('/api/path/<start>/<end>')
 def find_path(start, end):
-    def bfs(start, end):
-        queue = deque([[start]])
+    def best_first_search(start, end):
+        # Hàng đợi ưu tiên để lưu các đường đi
+        # Mỗi phần tử trong hàng đợi là tuple (priority, path)
+        # priority càng thấp càng được ưu tiên
+        queue = PriorityQueue()
+        queue.put((0, [start]))
         visited = {start}
         
-        while queue:
-            path = queue.popleft()
+        while not queue.empty():
+            # Lấy đường đi có độ ưu tiên cao nhất
+            current_cost, path = queue.get()
             current = path[-1]
             
+            # Nếu đã đến đích
             if current == end:
                 return path
-                
+            
+            # Xét các tỉnh kề
             for neighbor in PROVINCES[current]['neighbors']:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     new_path = list(path)
                     new_path.append(neighbor)
-                    queue.append(new_path)
+                    
+                    # Tính độ ưu tiên cho đường đi mới
+                    # Sử dụng heuristic để ước tính khoảng cách đến đích
+                    priority = heuristic(neighbor, end)
+                    queue.put((priority, new_path))
         
         return None
 
-    path = bfs(start, end)
+    path = best_first_search(start, end)
     if path:
         return jsonify({
             'success': True,
