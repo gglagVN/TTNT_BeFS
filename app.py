@@ -76,12 +76,12 @@ COORDINATES = {
 PROVINCES = {
     'hanoi': {
         'name': 'Hà Nội',
-        'representative_number': 23,
+        'representative_number': 24,
         'neighbors': ['hungyen', 'bacninh', 'vinhphuc', 'hoabinh', 'phutho', 'bacgiang']
     },
     'hungyen': {
         'name': 'Hưng Yên',
-        'representative_number': 29,
+        'representative_number': 30,
         'neighbors': ['hanoi', 'bacninh', 'haiduong', 'thaibinh']
     },
     'bacninh': {
@@ -91,27 +91,27 @@ PROVINCES = {
     },
     'hoabinh': {
         'name': 'Hòa Bình',
-        'representative_number': 28,
+        'representative_number': 29,
         'neighbors': ['hanoi', 'phutho', 'sonla', 'thanhhoa']
     },
     'vinhphuc': {
         'name': 'Vĩnh Phúc',
-        'representative_number': 60,
+        'representative_number': 62,
         'neighbors': ['hanoi', 'phutho', 'tuyenquang', 'thainguyen', 'bacgiang']
     },
     'haiduong': {
         'name': 'Hải Dương',
-        'representative_number': 25,
+        'representative_number': 26,
         'neighbors': ['hungyen', 'bacninh', 'bacgiang', 'quangninh', 'haiphong', 'thaibinh']
     },
     'haiphong': {
         'name': 'Hải Phòng',
-        'representative_number': 26,
+        'representative_number': 27,
         'neighbors': ['haiduong', 'quangninh', 'thaibinh']
     },
     'quangninh': {
         'name': 'Quảng Ninh',
-        'representative_number': 46,
+        'representative_number': 48,
         'neighbors': ['haiduong', 'bacgiang', 'langson', 'haiphong']
     },
     'bacgiang': {
@@ -121,12 +121,12 @@ PROVINCES = {
     },
     'langson': {
         'name': 'Lạng Sơn',
-        'representative_number': 35,
+        'representative_number': 36,
         'neighbors': ['quangninh', 'bacgiang', 'thainguyen', 'backan', 'caobang']
     },
     'thainguyen': {
         'name': 'Thái Nguyên',
-        'representative_number': 52,
+        'representative_number': 54,
         'neighbors': ['vinhphuc', 'bacgiang', 'langson', 'backan', 'tuyenquang']
     },
     'backan': {
@@ -141,7 +141,7 @@ PROVINCES = {
     },
     'tuyenquang': {
         'name': 'Tuyên Quang',
-        'representative_number': 58,
+        'representative_number': 60,
         'neighbors': ['vinhphuc', 'thainguyen', 'backan', 'hagiang', 'yenbai', 'phutho']
     },
     'hagiang': {
@@ -151,17 +151,17 @@ PROVINCES = {
     },
     'yenbai': {
         'name': 'Yên Bái',
-        'representative_number': 61,
+        'representative_number': 63,
         'neighbors': ['hagiang', 'tuyenquang', 'phutho', 'sonla', 'laichau']
     },
     'phutho': {
         'name': 'Phú Thọ',
-        'representative_number': 41,
+        'representative_number': 43,
         'neighbors': ['hanoi', 'vinhphuc', 'tuyenquang', 'yenbai', 'sonla', 'hoabinh']
     },
     'laichau': {
         'name': 'Lai Châu',
-        'representative_number': 33,
+        'representative_number': 34,
         'neighbors': ['yenbai', 'sonla', 'dienbien']
     },
     'dienbien': {
@@ -171,52 +171,52 @@ PROVINCES = {
     },
     'sonla': {
         'name': 'Sơn La',
-        'representative_number': 49,
+        'representative_number': 51,
         'neighbors': ['phutho', 'yenbai', 'laichau', 'dienbien', 'thanhhoa', 'hoabinh']
     },
     'thaibinh': {
         'name': 'Thái Bình',
-        'representative_number': 51,
+        'representative_number': 53,
         'neighbors': ['hungyen', 'haiduong', 'haiphong', 'namdinh']
     },
     'namdinh': {
         'name': 'Nam Định',
-        'representative_number': 37,
+        'representative_number': 39,
         'neighbors': ['thaibinh', 'ninhbinh', 'thanhhoa']
     },
     'ninhbinh': {
         'name': 'Ninh Bình',
-        'representative_number': 39,
+        'representative_number': 41,
         'neighbors': ['namdinh', 'thanhhoa', 'hoabinh']
     },
     'thanhhoa': {
         'name': 'Thanh Hóa',
-        'representative_number': 53,
+        'representative_number': 55,
         'neighbors': ['sonla', 'hoabinh', 'ninhbinh', 'nghean']
     },
     'nghean': {
         'name': 'Nghệ An',
-        'representative_number': 38,
+        'representative_number': 40,
         'neighbors': ['thanhhoa', 'hatinh']
     },
     'hatinh': {
         'name': 'Hà Tĩnh',
-        'representative_number': 24,
+        'representative_number': 25,
         'neighbors': ['nghean', 'quangbinh']
     },
     'quangbinh': {
         'name': 'Quảng Bình',
-        'representative_number': 43,
+        'representative_number': 45,
         'neighbors': ['hatinh', 'quangtri']
     },
     'quangtri': {
         'name': 'Quảng Trị',
-        'representative_number': 47,
+        'representative_number': 49,
         'neighbors': ['quangbinh', 'thuathienhue']
     },
     'thuathienhue': {
         'name': 'Thừa Thiên Huế',
-        'representative_number': 54,
+        'representative_number': 56,
         'neighbors': ['quangtri', 'danang', 'quangnam']
     },
     'danang': {
@@ -226,17 +226,17 @@ PROVINCES = {
     },
     'quangnam': {
         'name': 'Quảng Nam',
-        'representative_number': 44,
+        'representative_number': 46,
         'neighbors': ['thuathienhue', 'danang', 'quangngai', 'kontum']
     },
     'quangngai': {
         'name': 'Quảng Ngãi',
-        'representative_number': 45,
+        'representative_number': 47,
         'neighbors': ['quangnam', 'kontum', 'binhdinh']
     },
     'kontum': {
         'name': 'Kon Tum',
-        'representative_number': 32,
+        'representative_number': 33,
         'neighbors': ['quangnam', 'quangngai', 'gialai']
     },
     'binhdinh': {
@@ -251,7 +251,7 @@ PROVINCES = {
     },
     'phuyen': {
         'name': 'Phú Yên',
-        'representative_number': 42,
+        'representative_number': 44,
         'neighbors': ['binhdinh', 'gialai', 'daklak', 'khanhhoa']
     },
     'daklak': {
@@ -261,7 +261,7 @@ PROVINCES = {
     },
     'khanhhoa': {
         'name': 'Khánh Hòa',
-        'representative_number': 30,
+        'representative_number': 31,
         'neighbors': ['phuyen', 'daklak', 'lamdong', 'ninhthuan']
     },
     'daknong': {
@@ -271,12 +271,12 @@ PROVINCES = {
     },
     'lamdong': {
         'name': 'Lâm Đồng',
-        'representative_number': 34,
+        'representative_number': 35,
         'neighbors': ['daklak', 'khanhhoa', 'ninhthuan', 'binhthuan', 'dongnai', 'binhphuoc']
     },
     'ninhthuan': {
         'name': 'Ninh Thuận',
-        'representative_number': 40,
+        'representative_number': 42,
         'neighbors': ['khanhhoa', 'lamdong', 'binhthuan']
     },
     'binhthuan': {
@@ -291,7 +291,7 @@ PROVINCES = {
     },
     'tayninh': {
         'name': 'Tây Ninh',
-        'representative_number': 50,
+        'representative_number': 52,
         'neighbors': ['binhphuoc', 'binhduong', 'longan']
     },
     'binhduong': {
@@ -306,7 +306,7 @@ PROVINCES = {
     },
     'tphochiminh': {
         'name': 'TP Hồ Chí Minh',
-        'representative_number': 56,
+        'representative_number': 58,
         'neighbors': ['binhduong', 'dongnai', 'bariavungtau', 'longan', 'tiengiang']
     },
     'bariavungtau': {
@@ -316,12 +316,12 @@ PROVINCES = {
     },
     'longan': {
         'name': 'Long An',
-        'representative_number': 36,
+        'representative_number': 38,
         'neighbors': ['tayninh', 'tphochiminh', 'tiengiang', 'dongthap']
     },
     'tiengiang': {
         'name': 'Tiền Giang',
-        'representative_number': 55,
+        'representative_number': 57,
         'neighbors': ['tphochiminh', 'longan', 'dongthap', 'vinhlong', 'bentre']
     },
     'bentre': {
@@ -331,12 +331,12 @@ PROVINCES = {
     },
     'travinh': {
         'name': 'Trà Vinh',
-        'representative_number': 57,
+        'representative_number': 59,
         'neighbors': ['bentre', 'vinhlong', 'soctrang']
     },
     'vinhlong': {
         'name': 'Vĩnh Long',
-        'representative_number': 59,
+        'representative_number': 61,
         'neighbors': ['tiengiang', 'dongthap', 'cantho', 'soctrang', 'travinh', 'bentre']
     },
     'dongthap': {
@@ -351,7 +351,7 @@ PROVINCES = {
     },
     'kiengiang': {
         'name': 'Kiên Giang',
-        'representative_number': 31,
+        'representative_number': 32,
         'neighbors': ['angiang', 'cantho', 'haugiang', 'camau']
     },
     'cantho': {
@@ -361,12 +361,12 @@ PROVINCES = {
     },
     'haugiang': {
         'name': 'Hậu Giang',
-        'representative_number': 27,
+        'representative_number': 28,
         'neighbors': ['cantho', 'soctrang', 'baclieu', 'kiengiang']
     },
     'soctrang': {
         'name': 'Sóc Trăng',
-        'representative_number': 48,
+        'representative_number': 50,
         'neighbors': ['travinh', 'vinhlong', 'cantho', 'haugiang', 'baclieu']
     },
     'baclieu': {
@@ -386,7 +386,7 @@ PROVINCES = {
     },
     'hanam': {
     'name': 'Hà Nam',
-    'representative_number': 33,  
+    'representative_number': 23,
     'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh']
 },
     'hoangsa': {
