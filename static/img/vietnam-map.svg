@@ -327,126 +327,124 @@
         </text>
         <text class="Tây Ninh" x="509.3" y="790.3" id="tayninh">52
         </text>
-        <<<<<<< Updated upstream <text class="Long An" x="510.7" y="829.2" id="longan">38
-            =======
-            <text class="Long An" x="518.7" y="833.2" id="longan">38
-                >>>>>>> Stashed changes
-            </text>
-            <text class="Ðong Tháp" x="476.2" y="835" id="dongthap">20
-            </text>
-            <text class="An Giang" x="457.3" y="843.7" id="angiang">1
-            </text>
-            <<<<<<< Updated upstream <text class="Kiên Giang" x="469.6" y="873.8" id="kiengiang">32
-                =======
-                <text class="Kiên Giang" x="449.6" y="893.8" id="kiengiang">32
-                    >>>>>>> Stashed changes
-                </text>
-                <text class="Điện Biên" x="330.8" y="148.5" id="dienbien">18
-                </text>
-                <text class="Son La" x="386.3" y="177.1" id="sonla">51
-                </text>
-                <text class="Thanh Hóa" x="475.1" y="270.6" id="thanhhoa">55
-                </text>
-                <text class="Nghệ An" x="425" y="315.1" id="nghean">40
-                </text>
-                <text class="Ha Tinh" x="480.7" y="364.4" id="hatinh">25
-                </text>
-                <text class="Quảng Bình" x="510.3" y="412.5" id="quangbinh">45
-                </text>
-                <text class="Quảng Trị" x="550.6" y="465.5" id="quangtri">49
-                </text>
-                <text class="Thừa Thiên - Huế" x="595.3" y="484.3" id="thuathienhue">56
-                </text>
-                <text class="Quàng Nam" x="620.3" y="530.4" id="quangnam">46
-                </text>
-                <text class="Hà Giang" x="446.6" y="92" id="hagiang">22
-                </text>
-                <text class="Cao Bằng" x="515.8" y="95.2" id="caobang">14
-                </text>
-                <text class="Lào Cai" x="390.8" y="120.3" id="laocai">37
-                </text>
-                <text class="Lai Chau" x="340.8" y="120" id="laichau">34
-                </text>
-                <text class="Lạng Sơn" x="530.1" y="143.8" id="langson">36
-                </text>
-                <text class="Quảng Ninh" x="580.8" y="183.5" id="quangninh">48
-                </text>
-                <text class="Sóc Trăng" x="497.1" y="901.7" id="soctrang">50
-                </text>
-                <text class="Tiền Giang" x="514.3" y="850" id="tiengiang">57
-                </text>
-                <text class="Bà Rịa - Vũng Tàu" x="581.2" y="842.3" id="bariavungtau">2
-                </text>
-                <text class="Hồ Chí Minh city" x="543" y="825.8" id="tphochiminh" style="font-size:12px">58
-                </text>
-                <text class="Khánh Hòa" x="675" y="731.5" id="khanhhoa">31
-                </text>
-                <text class="Cà Mau" x="446.5" y="934.7" id="camau">12
-                </text>
-                <text class="Bạc Liêu" x="478.6" y="919" id="baclieu">5
-                </text>
-                <text class="Hau Giang" x="483.4" y="884.6" id="haugiang">28
-                </text>
-                <text class="Vĩnh Long" x="502.7" y="868.5" id="vinhlong">61
-                </text>
-                <text class="Trà Vinh" x="519.9" y="887.3" id="travinh">59
-                </text>
-                <text class="Bến Tre" x="539.4" y="867.1" id="bentre">7
-                </text>
-                <text class="Đồng Nai" x="570.6" y="815.7" id="dongnai">19
-                </text>
-                <text class="Bình Thuận" x="619.6" y="806.9" id="binhthuan">11
-                </text>
-                <text class="Ninh Thuận" x="670.8" y="775.3" id="ninhthuan">42
-                </text>
-                <text class="Phú Yên" x="680.2" y="685.4" id="phuyen">44
-                </text>
-                <text class="Bình Định" x="683" y="615.9" id="binhdinh">8
-                </text>
-                <text class="Quảng Ngãi" x="660" y="575.2" id="quangngai">47
-                </text>
-                <text class="Đà Nẵng" x="634.7" y="502.8" id="danang">15
-                </text>
-                <text class="Ninh Bình" x="495" y="255" id="ninhbinh">41
-                </text>
-                <text class="Nam Định" x="520" y="260.8" id="namdinh">39
-                </text>
-                <text class="Thái Bình" x="533.2" y="235.9" id="thaibinh">53
-                </text>
-                <text class="Hải Phòng" x="548.8" y="215.2" id="haiphong">27
-                </text>
-                <text class="Hòa Bình" x="460.4" y="220.9" id="hoabinh">29
-                </text>
-                <text class="Tuyên Quang" x="455.5" y="125.8" id="tuyenquang">60
-                </text>
-                <text class="Yên Bái" x="420.8" y="149.7" id="yenbai">63
-                </text>
-                <text class="Vĩnh Phúc" x="475.6" y="180.1" id="vinhphuc">62
-                </text>
-                <text class="Phú Thọ" x="450" y="180.4" id="phutho">43
-                </text>
-                <text class="Ha Noi" x="480.3" y="205.8" id="hanoi">24
-                </text>
-                <text class="Bắc Kạn" x="505.2" y="118.7" id="backan">4
-                </text>
-                <text class="Hưng Yên" x="500.2" y="210.5" id="hungyen">30
-                </text>
-                <text class="Bắc Ninh" x="510.6" y="195.7" id="bacninh">6
-                </text>
-                <text class="Bắc Giang" x="525.4" y="180.2" id="bacgiang">3
-                </text>
-                <text class="Thái Nguyên" x="490.6" y="158.6" id="thainguyen">54
-                </text>
-                <text class="Hải Dương" x="520.3" y="204.2" id="haiduong">26
-                </text>
-                <text class="Hà Nam" x="500.2" y="230.5" id="hanam">23
-                </text>
-                <text class="Bình Dương" x="543" y="803" id="binhduong">9
-                </text>
-                <text class="Lâm Đồng" x="640.3" y="770.4" id="lamdong">35
-                </text>
-                <text class="Can Tho" x="474.9" y="861.9" id="cantho">13
-                </text>
+
+        <text class="Long An" x="518.7" y="833.2" id="longan">38
+
+        </text>
+        <text class="Ðong Tháp" x="476.2" y="835" id="dongthap">20
+        </text>
+        <text class="An Giang" x="457.3" y="843.7" id="angiang">1
+        </text>
+
+        <text class="Kiên Giang" x="449.6" y="893.8" id="kiengiang">32
+
+        </text>
+        <text class="Điện Biên" x="330.8" y="148.5" id="dienbien">18
+        </text>
+        <text class="Son La" x="386.3" y="177.1" id="sonla">51
+        </text>
+        <text class="Thanh Hóa" x="475.1" y="270.6" id="thanhhoa">55
+        </text>
+        <text class="Nghệ An" x="425" y="315.1" id="nghean">40
+        </text>
+        <text class="Ha Tinh" x="480.7" y="364.4" id="hatinh">25
+        </text>
+        <text class="Quảng Bình" x="510.3" y="412.5" id="quangbinh">45
+        </text>
+        <text class="Quảng Trị" x="550.6" y="465.5" id="quangtri">49
+        </text>
+        <text class="Thừa Thiên - Huế" x="595.3" y="484.3" id="thuathienhue">56
+        </text>
+        <text class="Quàng Nam" x="620.3" y="530.4" id="quangnam">46
+        </text>
+        <text class="Hà Giang" x="446.6" y="92" id="hagiang">22
+        </text>
+        <text class="Cao Bằng" x="515.8" y="95.2" id="caobang">14
+        </text>
+        <text class="Lào Cai" x="390.8" y="120.3" id="laocai">37
+        </text>
+        <text class="Lai Chau" x="340.8" y="120" id="laichau">34
+        </text>
+        <text class="Lạng Sơn" x="530.1" y="143.8" id="langson">36
+        </text>
+        <text class="Quảng Ninh" x="580.8" y="183.5" id="quangninh">48
+        </text>
+        <text class="Sóc Trăng" x="497.1" y="901.7" id="soctrang">50
+        </text>
+        <text class="Tiền Giang" x="514.3" y="850" id="tiengiang">57
+        </text>
+        <text class="Bà Rịa - Vũng Tàu" x="581.2" y="842.3" id="bariavungtau">2
+        </text>
+        <text class="Hồ Chí Minh city" x="543" y="825.8" id="tphochiminh" style="font-size:12px">58
+        </text>
+        <text class="Khánh Hòa" x="675" y="731.5" id="khanhhoa">31
+        </text>
+        <text class="Cà Mau" x="446.5" y="934.7" id="camau">12
+        </text>
+        <text class="Bạc Liêu" x="478.6" y="919" id="baclieu">5
+        </text>
+        <text class="Hau Giang" x="483.4" y="884.6" id="haugiang">28
+        </text>
+        <text class="Vĩnh Long" x="502.7" y="868.5" id="vinhlong">61
+        </text>
+        <text class="Trà Vinh" x="519.9" y="887.3" id="travinh">59
+        </text>
+        <text class="Bến Tre" x="539.4" y="867.1" id="bentre">7
+        </text>
+        <text class="Đồng Nai" x="570.6" y="815.7" id="dongnai">19
+        </text>
+        <text class="Bình Thuận" x="619.6" y="806.9" id="binhthuan">11
+        </text>
+        <text class="Ninh Thuận" x="670.8" y="775.3" id="ninhthuan">42
+        </text>
+        <text class="Phú Yên" x="680.2" y="685.4" id="phuyen">44
+        </text>
+        <text class="Bình Định" x="683" y="615.9" id="binhdinh">8
+        </text>
+        <text class="Quảng Ngãi" x="660" y="575.2" id="quangngai">47
+        </text>
+        <text class="Đà Nẵng" x="634.7" y="502.8" id="danang">15
+        </text>
+        <text class="Ninh Bình" x="495" y="255" id="ninhbinh">41
+        </text>
+        <text class="Nam Định" x="520" y="260.8" id="namdinh">39
+        </text>
+        <text class="Thái Bình" x="533.2" y="235.9" id="thaibinh">53
+        </text>
+        <text class="Hải Phòng" x="548.8" y="215.2" id="haiphong">27
+        </text>
+        <text class="Hòa Bình" x="460.4" y="220.9" id="hoabinh">29
+        </text>
+        <text class="Tuyên Quang" x="455.5" y="125.8" id="tuyenquang">60
+        </text>
+        <text class="Yên Bái" x="420.8" y="149.7" id="yenbai">63
+        </text>
+        <text class="Vĩnh Phúc" x="475.6" y="180.1" id="vinhphuc">62
+        </text>
+        <text class="Phú Thọ" x="450" y="180.4" id="phutho">43
+        </text>
+        <text class="Ha Noi" x="480.3" y="205.8" id="hanoi">24
+        </text>
+        <text class="Bắc Kạn" x="505.2" y="118.7" id="backan">4
+        </text>
+        <text class="Hưng Yên" x="500.2" y="210.5" id="hungyen">30
+        </text>
+        <text class="Bắc Ninh" x="510.6" y="195.7" id="bacninh">6
+        </text>
+        <text class="Bắc Giang" x="525.4" y="180.2" id="bacgiang">3
+        </text>
+        <text class="Thái Nguyên" x="490.6" y="158.6" id="thainguyen">54
+        </text>
+        <text class="Hải Dương" x="520.3" y="204.2" id="haiduong">26
+        </text>
+        <text class="Hà Nam" x="500.2" y="230.5" id="hanam">23
+        </text>
+        <text class="Bình Dương" x="543" y="803" id="binhduong">9
+        </text>
+        <text class="Lâm Đồng" x="640.3" y="770.4" id="lamdong">35
+        </text>
+        <text class="Can Tho" x="474.9" y="861.9" id="cantho">13
+        </text>
     </g>
 
 </svg>
