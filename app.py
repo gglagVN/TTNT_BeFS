@@ -187,7 +187,7 @@ PROVINCES = {
     'ninhbinh': {
         'name': 'Ninh Bình',
         'representative_number': 41,
-        'neighbors': ['namdinh', 'thanhhoa', 'hoabinh']
+        'neighbors': ['namdinh', 'thanhhoa', 'hoabinh','hanam']
     },
     'thanhhoa': {
         'name': 'Thanh Hóa',
@@ -387,7 +387,7 @@ PROVINCES = {
     'hanam': {
     'name': 'Hà Nam',
     'representative_number': 23,
-    'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh']
+    'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh','ninhbinh']
 },
     'hoangsa': {
     'name': 'Hoàng Sa',
