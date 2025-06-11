@@ -1,12 +1,10 @@
 from flask import Flask, render_template, jsonify, send_from_directory
-from collections import deque
 import os
 from queue import PriorityQueue
 import math
 
 app = Flask(__name__)
 
-# Dữ liệu kề của các tỉnh Việt Nam
 COORDINATES = {
     'hanoi': {'lat': 21.0285, 'lng': 105.8542},
     'hungyen': {'lat': 20.6464, 'lng': 106.0511},
@@ -182,7 +180,7 @@ PROVINCES = {
     'namdinh': {
         'name': 'Nam Định',
         'representative_number': 39,
-        'neighbors': ['thaibinh', 'ninhbinh', 'thanhhoa','hanam']
+        'neighbors': ['thaibinh', 'ninhbinh','hanam']
     },
     'ninhbinh': {
         'name': 'Ninh Bình',
@@ -407,12 +405,11 @@ def calculate_distance(coord1, coord2):
     lat1, lng1 = math.radians(coord1['lat']), math.radians(coord1['lng'])
     lat2, lng2 = math.radians(coord2['lat']), math.radians(coord2['lng'])
     
-    # Công thức Haversine để tính khoảng cách
     dlat = lat2 - lat1
     dlng = lng2 - lng1
     a = math.sin(dlat/2)**2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlng/2)**2
     c = 2 * math.asin(math.sqrt(a))
-    r = 6371 # Bán kính trái đất (km)
+    r = 6371
     return c * r
 
 def heuristic(current, goal):
@@ -437,31 +434,22 @@ def get_provinces():
 @app.route('/api/path/<start>/<end>')
 def find_path(start, end):
     def best_first_search(start, end):
-        # Hàng đợi ưu tiên để lưu các đường đi
-        # Mỗi phần tử trong hàng đợi là tuple (priority, path)
-        # priority càng thấp càng được ưu tiên
         queue = PriorityQueue()
         queue.put((0, [start]))
         visited = {start}
         
         while not queue.empty():
-            # Lấy đường đi có độ ưu tiên cao nhất
             current_cost, path = queue.get()
             current = path[-1]
-            
-            # Nếu đã đến đích
+
             if current == end:
                 return path
-            
-            # Xét các tỉnh kề
+
             for neighbor in PROVINCES[current]['neighbors']:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     new_path = list(path)
                     new_path.append(neighbor)
-                    
-                    # Tính độ ưu tiên cho đường đi mới
-                    # Sử dụng heuristic để ước tính khoảng cách đến đích
                     priority = heuristic(neighbor, end)
                     queue.put((priority, new_path))
         
