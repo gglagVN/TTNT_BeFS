@@ -75,12 +75,12 @@ PROVINCES = {
     'hanoi': {
         'name': 'Hà Nội',
         'representative_number': 24,
-        'neighbors': ['hungyen', 'bacninh', 'vinhphuc', 'hoabinh', 'phutho', 'bacgiang']
+        'neighbors': ['hungyen', 'bacninh', 'vinhphuc', 'hoabinh', 'phutho', 'bacgiang','hanam','thainguyen']
     },
     'hungyen': {
         'name': 'Hưng Yên',
         'representative_number': 30,
-        'neighbors': ['hanoi', 'bacninh', 'haiduong', 'thaibinh']
+        'neighbors': ['hanoi', 'bacninh', 'haiduong', 'thaibinh','hanam']
     },
     'bacninh': {
         'name': 'Bắc Ninh',
@@ -125,7 +125,7 @@ PROVINCES = {
     'thainguyen': {
         'name': 'Thái Nguyên',
         'representative_number': 54,
-        'neighbors': ['vinhphuc', 'bacgiang', 'langson', 'backan', 'tuyenquang']
+        'neighbors': ['vinhphuc', 'bacgiang', 'langson', 'backan', 'tuyenquang','hanoi']
     },
     'backan': {
         'name': 'Bắc Kạn',
@@ -385,7 +385,7 @@ PROVINCES = {
     'hanam': {
     'name': 'Hà Nam',
     'representative_number': 23,
-    'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh']
+    'neighbors': ['hanoi', 'hoabinh', 'ninhbinh', 'namdinh', 'thaibinh','hungyen']
 },
     'hoangsa': {
     'name': 'Hoàng Sa',
